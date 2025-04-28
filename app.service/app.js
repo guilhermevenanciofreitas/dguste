@@ -22,15 +22,20 @@ export class App {
 
   initializeMiddlewares = () => {
 
-    const corsOptions = {
-      origin: '*',
-      exposedHeaders: ['Last-Acess', 'Expire-In'],
-    }
-
-    this.express.use(cors(corsOptions))
-    this.express.use(express.json())
-
+  const corsOptions = {
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    exposedHeaders: ['Last-Access', 'Expire-In'],
   }
+
+  this.express.use(cors(corsOptions))
+  this.express.use(express.json())
+
+  // Opcional: lidar manualmente com o preflight (OPTIONS)
+  this.express.options('*', cors(corsOptions))
+
+}
 
   initializeRoutes = () => {
 
