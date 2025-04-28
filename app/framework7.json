@@ -1,0 +1,27 @@
+{
+  "cwd": "C:\\develop\\app.service\\app.sales",
+  "type": [
+    "web",
+    "pwa",
+    "capacitor"
+  ],
+  "name": "Vendas",
+  "framework": "react",
+  "template": "split-view",
+  "bundler": "vite",
+  "cssPreProcessor": false,
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkMode": false,
+    "iconFonts": true
+  },
+  "customBuild": false,
+  "pkg": "br.com.atlanta.vendas",
+  "capacitor": {
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  }
+}

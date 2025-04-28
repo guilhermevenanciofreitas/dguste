@@ -1,0 +1,13 @@
+{
+  "appId": "br.com.atlanta.vendas",
+  "appName": "Vendas",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
