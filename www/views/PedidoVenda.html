@@ -1,0 +1,148 @@
+<div data-page="PedidoVenda" class="page toolbar-fixed">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="index.html" class="back link icon-only" onclick="MinhasVendas.Carregar()"><i class="icon icon-back"></i></a>
+            </div>
+            <div class="center">Venda</div>
+            <div class="right">
+
+            </div>
+        </div>
+    </div>
+    <div class="toolbar tabbar">
+        <div class="toolbar-inner">
+            <a href="#Principal" class="active tab-link">Principal</a>
+            <a href="#Produtos" class="tab-link">Produtos</a>
+        </div>
+    </div>
+    <div class="tabs-swipeable-wrap">
+        <div class="tabs">
+            <div id="Principal" class="page-content tab active">
+                <div class="content-block">
+                    <div class="content-block">
+                        <div id="viewSalvar"></div>
+                    </div>
+                    <form class="list-block inputs-list" id="frmPedidoVenda">
+                        <ul>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Número</div>
+                                        <div class="item-input disabled">
+                                            <input type="text" id="txtNUMERO" onchange="PedidoVenda.setNUMERO(this.value)"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Data</div>
+                                        <div class="item-input">
+                                            <input type="date" id="txtEMISSAO"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Cliente</div>
+                                        <div class="item-input">
+                                            <input type="text" id="txtCliente" onclick="PedidoVenda.findCliente()"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Forma de pagamento</div>
+                                        <div class="item-input">
+                                            <select id="cboPagamento">
+                                                <option value="N">Nota Assinada</option>
+                                                <option value="B">Boleto</option>
+                                                <option value="D">Dinheiro</option>
+                                                <option value="C">Cartão</option>
+                                                <option value="T">Transf. Bancária</option>
+                                                <option value="O">Outro</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Status</div>
+                                        <div class="item-input">
+                                            <select id="cboSIT">
+                                                <option value="V">Pronta Entrega</option>
+                                                <option value="P">Pré-Venda</option>
+                                                <option value="N">Nota Fiscal</option>
+                                                <option value="N">Devolução</option>
+                                                <option value="R">Remessa</option>
+                                                <option value="D">Dev Remessa</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Prazo</div>
+                                        <div class="item-input">
+                                            <input type="number" id="txtPrazo" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Observação</div>
+                                        <div class="item-input">
+                                            <textarea class="resizable" id="txtOBS"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+							
+							<br>
+                            
+                            <a href="#" id="btnSalvar" class="button button-raised" onclick="PedidoVenda.Liberar()">Liberar pedido</a>
+							
+                        </ul>
+                    </form>
+                </div>
+            </div>
+            <div id="Produtos" class="page-content tab">
+
+                <div class="content-block">
+                    <p class="buttons-row">
+                        <a href="#" id="btnAdicionar" class="button button-fill button-raised color-green" onclick="PedidoVenda.findProdutos()">Adicionar produto</a>
+                        <div class="row">
+                            <div class="col-25">
+                                Bruto: <label id="lblTOTBRUTO"></label>
+                            </div>
+                            <div class="col-25">
+                                Bonif.: <label id="lblTOTBONIF"></label>
+                            </div>
+                            <div class="col-25">
+                                Troca: <label id="lblTOTTROCA"></label>
+                            </div>
+                            <div class="col-25">
+                                Outros: <label id="lblTOTOUTROS"></label>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+
+                <div id="PedidoVendaItens"></div>
+
+            </div>
+        </div>
+    </div>
+</div>

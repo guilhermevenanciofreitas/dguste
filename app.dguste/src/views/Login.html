@@ -1,0 +1,47 @@
+<div class="pages navbar-through">
+  <div data-page="Login" class="page no-toolbar no-navbar no-swipeback">
+    <div class="page-content login-screen-content">
+      <div class="login-screen-title">D'Guste<font size="2px">v3.4</font></div>
+      <form>
+        <div class="list-block">
+          <ul>
+            <li class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Servidor</div>
+                <div class="item-input">
+                  <select id="cboServer" onchange="Login.Server()">
+                    <option value="" selected>[Selecione]</option>
+                    <option value="http://delprat.com.br/beckend-teste/">Servidor antigo</option>
+                    <option value="http://191.252.222.210/api/">Servidor novo</option>
+                  </select>
+                </div>
+              </div>
+            </li>
+            <li class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Usuário</div>
+                <div class="item-input">
+                  <input type="text" id="txtUsuario"/>
+                </div>
+              </div>
+            </li>
+            <li class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Senha</div>
+                <div class="item-input">
+                  <input type="password" id="txtSenha"/>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="content-block">
+          <div class="buttons-row">
+            <a href="#" class="button button-fill button-raised color-blue" onclick="Login.Entrar()">Entrar</a>
+            <a href="#" class="button button-fill button-raised color-green" onclick="Login.Atualizar(true)">Atualizar</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

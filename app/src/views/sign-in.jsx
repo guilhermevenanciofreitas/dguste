@@ -21,7 +21,7 @@ export const onRefresh = async () => {
 
   } catch (error) {
     console.log(error)
-    f7.dialog.alert(error.message, 'Ops!')
+    //f7.dialog.alert(error.message, 'Ops!')
   }
 }
 

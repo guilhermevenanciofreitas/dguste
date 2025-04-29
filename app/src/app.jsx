@@ -16,6 +16,13 @@ import {
 } from 'framework7-react';
 import capacitorApp from './capacitor-app';
 
+import { StatusBar, Style } from '@capacitor/status-bar';
+
+document.addEventListener('deviceready', () => {
+  StatusBar.setOverlaysWebView({ overlay: false });
+  StatusBar.setStyle({ style: Style.Light });
+});
+
 // Import your page components
 import { SignIn } from './views/sign-in';
 import ViewSales from './views/sales';
@@ -23,7 +30,6 @@ import ViewSale from './views/sale';
 import ViewCostumers from './views/costumers';
 import ViewProducts from './views/products';
 import ViewAddProducts from './views/add-products';
-
 
 const MainLayout = ({children}) => {
   
@@ -150,6 +156,7 @@ const MyApp = () => {
       scrollIntoViewCentered: device.capacitor,
     },
     statusbar: {
+      enabled: true,
       iosOverlaysWebView: true,
       androidOverlaysWebView: false,
     },

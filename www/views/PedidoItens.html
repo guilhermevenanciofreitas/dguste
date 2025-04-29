@@ -1,0 +1,70 @@
+<div data-page="PedidoItens" class="page toolbar-fixed">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="index.html" class="back link icon-only" onclick="PedidoVenda.Carregar()"><i class="icon icon-back"></i></a>
+            </div>
+            <div class="center">Produtos</div>
+        </div>
+    </div>
+    <form data-search-list=".search-here" data-search-in=".item-title" class="searchbar searchbar-init">
+        <div class="searchbar-input">
+            <input type="search" placeholder="Procurar" onkeyup="PedidoItens.Carregar(this.value)"/><a href="#" class="searchbar-clear"></a>
+        </div>
+    </form>
+    <div class="searchbar-overlay"></div>
+    <div class="page-content">
+        <form class="list-block inputs-list">
+            <ul>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">Tipo</div>
+                            <div class="item-input">
+                                <select id="cboTIPO">
+                                    <option value="1">Venda</option>
+                                    <option value="2">Bonificação</option>
+                                    <option value="3">Troca</option>
+                                    <option value="4">Outros</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <div class="row">
+                    <div class="col-60 tablet-60">
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">Data de validade</div>
+                                    <div class="item-input">
+                                        <input type="date" id="DTVALIDADE" placeholder="Validade"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="col-40 tablet-40">
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">Lote</div>
+                                    <div class="item-input">
+                                        <input type="number" id="NUMLOTE" placeholder="Lote" maxlength="11"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+
+            </ul>
+        </form>
+        <div class="card">
+            <div class="card-header" id="lblTotalPedidoItens"></div>
+        </div>
+
+        <div id="listPedidoItens"></div>
+
+    </div>
+</div>

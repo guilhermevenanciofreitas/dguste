@@ -1,0 +1,31 @@
+<div data-page="MinhasVendas" class="page">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+            <div class="center">Minhas Vendas</div>
+            <div class="right">
+                <div class="right">
+                    <a href="#" class="link icon-only" onclick="MinhasVendas.Importar()"><i class="fa fa-download"></i></a>
+                    <a href="#" data-popover=".popover-menu" class="open-popover link icon-only"><i class="fa fa-ellipsis-v"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="content-block-title">Período</div>
+        <div class="list-block">
+            <ul>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <input type="text" placeholder="Selecione a data" readonly="readonly" id="filtroPeriodo" onchange="MinhasVendas.Carregar()"/>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="listVendas"></div>
+    </div>
+</div>
