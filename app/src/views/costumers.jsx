@@ -37,7 +37,15 @@ const ViewCostumers = ({isBack, onItem}) => {
 
   useEffect(() => {
 
-    fetchData('')
+    const load = async () => {
+      try {
+        fetchData('')
+      } catch (error) {
+        console.error('Erro ao buscar dados:', error);
+      }
+    };
+
+    load();    
 
   }, [])
 
